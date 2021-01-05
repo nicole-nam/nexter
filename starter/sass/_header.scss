@@ -12,10 +12,10 @@
   padding-top: 4rem;
 
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-rows: 1fr min-content 6rem 1fr min-content;
   grid-template-columns: max-content;
   row-gap: 1.5rem;
-justify-content: center;
+  justify-content: center;
 
   &__logo {
     height: 3rem;
@@ -27,12 +27,31 @@ justify-content: center;
     justify-self: start;
   }
 
-  &__seeonon-text {
+  &__seenon-text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+    align-items: center;
+    font-size: 1.6rem;
+    color: $color-grey-light-2;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor; //current textcolor
+    }
   }
 
   &__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    justify-items: center;
     img {
       height: 2.5rem;
+      filter: brightness(70%);
     }
   }
 }
